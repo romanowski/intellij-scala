@@ -34,7 +34,7 @@ abstract class IdeClient(compilerName: String,
     context.getProjectDescriptor.getProject.getName
     if (kind == Kind.WARNING && ScalaReflectMacroExpansionParser.isMacroMessage(text)) {
       ScalaReflectMacroExpansionParser.processMessage(text)
-    } else {
+    } else if (LogFilter.shouldLog(kind, text, source, line, column)) {
       val withoutPointer =
         if (sourcePath.isDefined && line.isDefined && column.isDefined) {
           val lines = text.split('\n')

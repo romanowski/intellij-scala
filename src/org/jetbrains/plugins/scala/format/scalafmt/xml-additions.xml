@@ -1,0 +1,5 @@
+<additions>
+    <projectService serviceInterface="com.intellij.psi.codeStyle.CodeStyleManager"
+                    serviceImplementation="com.ms.stratosphere.jetfire.utils.formatter.ScalaFmtCodeStyleManagerImpl"
+                    overrides="true"/>
+</additions>
